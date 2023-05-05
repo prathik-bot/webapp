@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Web Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    #myButton {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .image-gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    function showAlert() {
+      alert("Button clicked!");
+    }
+
+    function toggleVisibility() {
+      var element = document.getElementById("myBox");
+      if (element.style.display === "none") {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
+    }
+
+    function changeImage(image) {
+      var mainImage = document.getElementById("mainImage");
+      mainImage.src = image.src;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcome to Prathik's Web Page</h1>
+    <p>Prathik's html website</p>
+    <div class="box"></div>
+    <button id="myButton" onclick="showAlert()">Click Me</button>
+
+    <div class="image-gallery">
+      <img src="image1.jpg" onclick="changeImage(this)" alt="Image 1">
+      <img src="image2.jpg" onclick="changeImage(this)" alt="Image 2">
+      <img src="image3.jpg" onclick="changeImage(this)" alt="Image 3">
+      <img src="image4.jpg" onclick="changeImage(this)" alt="Image 4">
+      <img src="image5.jpg" onclick="changeImage(this)" alt="Image 5">
+    </div>
+
+    <div id="myBox" style="display: none;">
+      <p>Hidden box.</p>
+      <button onclick="toggleVisibility()">Toggle Visibility</button>
+    </div>
+
+    <img id="mainImage" src="image1.jpg" alt="Main Image">
+  </div>
+</body>
+
+</html>
